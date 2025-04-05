@@ -19,7 +19,7 @@
     </nav>
     <section class="contact-form">
         <h2>Envía tu mensaje</h2>
-        <form action="#" method="post">
+        <form id="contactForm">
             <label for="nombre">Nombre:</label>
             <input type="text" id="nombre" name="nombre" required>
             
@@ -37,5 +37,28 @@
         <p>Diseñado por Gabriel</p>
         <p><a href="index.html">Inicio</a> | <a href="museos.html">Museos</a> | <a href="contacto.html">Contacto</a></p>
     </footer>
+    <script>
+        window.onload = function() {
+
+            const form = document.getElementById('contactForm');
+    
+            form.addEventListener('submit', function(event) {
+
+                event.preventDefault();
+
+                const nombre = document.getElementById('nombre').value;
+                const email = document.getElementById('email').value;
+                const mensaje = document.getElementById('mensaje').value;
+
+                alert(`Datos enviados:\nNombre: ${nombre}\nCorreo Electrónico: ${email}\nMensaje: ${mensaje}`);
+
+                console.log("Datos enviados:");
+                console.log(`Nombre: ${nombre}`);
+                console.log(`Correo Electrónico: ${email}`);
+                console.log(`Mensaje: ${mensaje}`);
+                form.reset();
+            });
+        };
+    </script>    
 </body>
 </html>
